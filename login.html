@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acceso Obligatorio | Universidad NovaTech del Valle</title>
+</head>
+<body>
+  <h1>UNOVA</h1>
+  <p>Universidad NovaTech del Valle</p>
+  <p>Región: México</p>
+
+  <form id="formLogin">
+    <label>Usuario / Correo</label>
+    <input type="text" id="usuario" required />
+
+    <label>Contraseña</label>
+    <input type="password" id="password" required />
+
+    <button type="submit">Ingresar al Portal</button>
+
+    <p id="mensaje" style="color:red; display:none;">Usuario o contraseña incorrectos.</p>
+  </form>
+
+  <script>
+    // ✅ EJEMPLO: credenciales fijas (cámbialas por las que uses)
+    const USUARIO_OK = "arif";
+    const PASSWORD_OK = "volovan_8hz";
+
+    document.getElementById("formLogin").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const usuario = document.getElementById("usuario").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      const ok = (usuario === USUARIO_OK && password === PASSWORD_OK);
+
+      if (!ok) {
+        const mensaje = document.getElementById("mensaje");
+        mensaje.style.display = "block";
+        return;
+      }
+
+      // ✅ Crear sesión
+      localStorage.setItem("unova_sesion_activa", "true");
+
+      // ✅ Redirigir automáticamente a inventario
+      window.location.href = "inventario.html";
+    });
+  </script>
+</body>
+</html>

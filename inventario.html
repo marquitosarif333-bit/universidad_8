@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventario Institucional | Universidad NovaTech del Valle</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    @media(max-width: 800px) {
+      .contenedor-header { justify-content: flex-start !important; gap: 15px !important; }
+      #btnMenu { display: flex !important; order: 1; }
+      .logo { order: 2; }
+
+      nav {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: #1b2822;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 2px solid #2c5339;
+        display: none;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+        z-index: 1000;
+      }
+      nav.mostrar { display: flex !important; }
+
+      nav .enlace-menu { width: 80%; text-align: center; margin: 6px 0; color: #ffffff !important; text-decoration: none; font-size: 17px; font-weight: 600; padding: 10px 0; border-radius: 8px; }
+      nav .enlace-menu.login-btn { background: #2c5339; margin-bottom: 10px; }
+      nav .enlace-menu.activo, nav .enlace-menu:hover { color: #ffe599 !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header">
+    <div class="contenedor-header" style="max-width:1250px; margin:auto; display:flex; align-items:center; justify-content:space-between; height:75px;">
+      <button id="btnMenu" type="button" aria-label="Abrir menú" style="display:none; border:none; background:none; font-size:24px; color:#1b2822; cursor:pointer;">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="logo" style="display:flex; align-items:center; gap:10px;">
+        <div class="logo-icono"><i class="fa-solid fa-tree"></i></div>
+        <div class="logo-texto" style="text-align:left;">
+          <h1>UNOVA</h1>
+          <span style="color: #4a5550; font-weight: 600;">Universidad NovaTech del Valle</span>
+        </div>
+      </div>
+
+      <nav id="menu">
+        <a href="index.html" class="enlace-menu">Inicio</a>
+        <a href="nosotros.html" class="enlace-menu">Nosotros</a>
+        <a href="inventario.html" class="enlace-menu activo">Inventario</a>
+        <a href="menu.html" class="enlace-menu">Menú</a>
+
+        <a href="#" id="btnCerrarSesion" class="enlace-menu login-btn">
+          <i class="fa-solid fa-right-from-bracket"></i> Salir / Login
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="margin-top: 75px; padding: 20px;">
+    <h2>Inventario General de Bienes</h2>
+    <p><i class="fa-solid fa-clipboard"></i> Registro oficial de equipos, mobiliario y recursos institucionales UNOVA.</p>
+
+    <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Código</th>
+          <th>Artículo</th>
+          <th>Categoría</th>
+          <th>Departamento</th>
+          <th>Cantidad</th>
+          <th>Estado</th>
+          <th>Ubicación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><strong>UNI-001</strong></td><td>Computadora de escritorio</td><td>Cómputo</td><td>Laboratorio 1</td><td>25</td><td>Bueno</td><td>Edificio A</td></tr>
+        <tr><td>2</td><td><strong>UNI-002</strong></td><td>Laptop Lenovo</td><td>Cómputo</td><td>Dirección</td><td>5</td><td>Bueno</td><td>Edificio B</td></tr>
+        <tr><td>3</td><td><strong>UNI-003</strong></td><td>Proyector Epson</td><td>Audiovisual</td><td>Sistemas</td><td>4</td><td>Bueno</td><td>Aula 201</td></tr>
+        <tr><td>4</td><td><strong>UNI-004</strong></td><td>Escritorio ejecutivo</td><td>Mobiliario</td><td>Administración</td><td>8</td><td>Bueno</td><td>Edificio B</td></tr>
+        <tr><td>5</td><td><strong>UNI-005</strong></td><td>Silla ergonómica</td><td>Mobiliario</td><td>Docencia</td><td>30</td><td>Regular</td><td>Edificio A</td></tr>
+        <tr><td>6</td><td><strong>UNI-006</strong></td><td>Impresora multifuncional</td><td>Periféricos</td><td>Control escolar</td><td>3</td><td>Bueno</td><td>Edificio C</td></tr>
+        <tr><td>7</td><td><strong>UNI-007</strong></td><td>Router inalámbrico</td><td>Redes</td><td>Sistemas</td><td>6</td><td>Bueno</td><td>Centro de cómputo</td></tr>
+        <tr><td>8</td><td><strong>UNI-008</strong></td><td>Pizarrón blanco</td><td>Material didáctico</td><td>Docencia</td><td>12</td><td>Bueno</td><td>Aulas</td></tr>
+        <tr><td>9</td><td><strong>UNI-009</strong></td><td>Regulador de voltaje</td><td>Eléctrico</td><td>Laboratorio 2</td><td>15</td><td>Regular</td><td>Edificio A</td></tr>
+        <tr><td>10</td><td><strong>UNI-010</strong></td><td>Computadora de escritorio</td><td>Cómputo</td><td>Biblioteca</td><td>10</td><td>En reparación</td><td>Biblioteca</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <script src="js/funciones.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const btnMenu = document.getElementById('btnMenu');
+      const menu = document.getElementById('menu');
+      const enlaces = document.querySelectorAll('.enlace-menu');
+
+      if (btnMenu && menu) {
+        btnMenu.addEventListener('click', function(e) {
+          e.stopPropagation();
+          menu.classList.toggle('mostrar');
+        });
+
+        enlaces.forEach(function(enlace) {
+          enlace.addEventListener('click', function() {
+            menu.classList.remove('mostrar');
+          });
+        });
+
+        document.addEventListener('click', function(e) {
+          if (!menu.contains(e.target) && !btnMenu.contains(e.target)) {
+            menu.classList.remove('mostrar');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
